@@ -1,0 +1,44 @@
+{
+    "name": "cycle_gan/iphone2dslr_flower",
+    "full_name": "cycle_gan/iphone2dslr_flower/2.0.0",
+    "size_mb": 324,
+    "num_examples": 6186,
+    "num_classes": 2,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 102.61864336348629,
+    "mean_std_pixel_value": 61.30857175512508,
+    "mean_pixel_value_per_channel": [
+        116.82911183312734,
+        106.30336786116344,
+        84.72345039616773
+    ],
+    "mean_std_pixel_value_per_channel": [
+        59.517239305520626,
+        53.44205834858061,
+        54.95224699839305
+    ],
+    "is_uniform_across_examples": false,
+    "is_square": false,
+    "max_x_dim": 942,
+    "max_y_dim": 360,
+    "max_dim": 942,
+    "min_x_dim": 78,
+    "min_y_dim": 360,
+    "min_dim": 78,
+    "mean_x_dim": 336.7576786291626,
+    "mean_y_dim": 360.0,
+    "mean_dim": 348.3788393145813,
+    "std_x_dim": 113.88514966109904,
+    "std_y_dim": 0.0,
+    "std_dim": 81.36316754122706,
+    "max_examples_per_class": 3805,
+    "min_examples_per_class": 2381,
+    "mean_examples_per_class": 3093.0,
+    "std_examples_per_class": 712.0,
+    "examples_per_class": [
+        2381,
+        3805
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "name": "cats_vs_dogs",
+    "full_name": "cats_vs_dogs/4.0.0",
+    "size_mb": 786,
+    "num_examples": 23262,
+    "num_classes": 2,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 114.81124659848362,
+    "mean_std_pixel_value": 59.29336747849654,
+    "mean_pixel_value_per_channel": [
+        123.31187598754752,
+        116.09170423880437,
+        105.03015956909901
+    ],
+    "mean_std_pixel_value_per_channel": [
+        58.46853403181551,
+        57.33259633692167,
+        57.425647011779354
+    ],
+    "is_uniform_across_examples": false,
+    "is_square": false,
+    "max_x_dim": 500,
+    "max_y_dim": 500,
+    "max_dim": 500,
+    "min_x_dim": 4,
+    "min_y_dim": 4,
+    "min_dim": 4,
+    "mean_x_dim": 364.8503138165248,
+    "mean_y_dim": 410.21541569942394,
+    "mean_dim": 387.5328647579744,
+    "std_x_dim": 96.2349322592621,
+    "std_y_dim": 107.95924105020984,
+    "std_dim": 104.7505516680103,
+    "max_examples_per_class": 11658,
+    "min_examples_per_class": 11604,
+    "mean_examples_per_class": 11631.0,
+    "std_examples_per_class": 27.0,
+    "examples_per_class": [
+        11658,
+        11604
+    ]
+}

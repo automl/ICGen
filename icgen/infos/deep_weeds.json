@@ -1,0 +1,51 @@
+{
+    "name": "deep_weeds",
+    "full_name": "deep_weeds/2.0.0",
+    "size_mb": 892,
+    "num_examples": 17509,
+    "num_classes": 9,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 96.68928827215368,
+    "mean_std_pixel_value": 54.544422111116894,
+    "mean_pixel_value_per_channel": [
+        95.31877906882544,
+        99.33515251813715,
+        95.41393322949816
+    ],
+    "mean_std_pixel_value_per_channel": [
+        54.0628342236403,
+        54.25796415769197,
+        53.8317223166897
+    ],
+    "is_uniform_across_examples": true,
+    "is_square": true,
+    "max_x_dim": 256,
+    "max_y_dim": 256,
+    "max_dim": 256,
+    "min_x_dim": 256,
+    "min_y_dim": 256,
+    "min_dim": 256,
+    "mean_x_dim": 256.0,
+    "mean_y_dim": 256.0,
+    "mean_dim": 256.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 9106,
+    "min_examples_per_class": 1009,
+    "mean_examples_per_class": 1945.4444444444443,
+    "std_examples_per_class": 2531.869581998037,
+    "examples_per_class": [
+        1125,
+        1064,
+        1031,
+        1022,
+        1062,
+        1009,
+        1074,
+        1016,
+        9106
+    ]
+}

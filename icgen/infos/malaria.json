@@ -1,0 +1,44 @@
+{
+    "name": "malaria",
+    "full_name": "malaria/1.0.0",
+    "size_mb": 337,
+    "num_examples": 27558,
+    "num_classes": 2,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 119.54603137754977,
+    "mean_std_pixel_value": 77.203285806842,
+    "mean_pixel_value_per_channel": [
+        135.0226139154469,
+        108.09579619333813,
+        115.5196840238617
+    ],
+    "mean_std_pixel_value_per_channel": [
+        84.72175948631731,
+        68.38158802995397,
+        71.92185064627444
+    ],
+    "is_uniform_across_examples": false,
+    "is_square": false,
+    "max_x_dim": 385,
+    "max_y_dim": 394,
+    "max_dim": 394,
+    "min_x_dim": 40,
+    "min_y_dim": 46,
+    "min_dim": 40,
+    "mean_x_dim": 132.9834530807751,
+    "mean_y_dim": 132.48715436533857,
+    "mean_dim": 132.73530372305683,
+    "std_x_dim": 20.61927561732627,
+    "std_y_dim": 20.015585545533767,
+    "std_dim": 20.321187808803373,
+    "max_examples_per_class": 13779,
+    "min_examples_per_class": 13779,
+    "mean_examples_per_class": 13779.0,
+    "std_examples_per_class": 0.0,
+    "examples_per_class": [
+        13779,
+        13779
+    ]
+}

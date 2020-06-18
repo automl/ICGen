@@ -1,0 +1,44 @@
+{
+    "name": "cycle_gan/vangogh2photo",
+    "full_name": "cycle_gan/vangogh2photo/2.0.0",
+    "size_mb": 292,
+    "num_examples": 7838,
+    "num_classes": 2,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 103.48602497386037,
+    "mean_std_pixel_value": 57.83631725285114,
+    "mean_pixel_value_per_channel": [
+        106.69498669039568,
+        106.43990863041782,
+        97.32317960076747
+    ],
+    "mean_std_pixel_value_per_channel": [
+        56.89394335748269,
+        51.53921647584658,
+        55.24951574985353
+    ],
+    "is_uniform_across_examples": false,
+    "is_square": true,
+    "max_x_dim": 256,
+    "max_y_dim": 256,
+    "max_dim": 256,
+    "min_x_dim": 256,
+    "min_y_dim": 256,
+    "min_dim": 256,
+    "mean_x_dim": 256.0,
+    "mean_y_dim": 256.0,
+    "mean_dim": 256.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 7038,
+    "min_examples_per_class": 800,
+    "mean_examples_per_class": 3919.0,
+    "std_examples_per_class": 3119.0,
+    "examples_per_class": [
+        800,
+        7038
+    ]
+}

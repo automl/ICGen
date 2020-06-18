@@ -1,0 +1,45 @@
+{
+    "name": "visual_domain_decathlon/daimlerpedcls",
+    "full_name": "visual_domain_decathlon/daimlerpedcls/1.1.0",
+    "size_mb": 1061,
+    "num_examples": 49000,
+    "num_classes": 2,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 119.3664387656679,
+    "mean_std_pixel_value": 43.593822886878804,
+    "mean_pixel_value_per_channel": [
+        119.3664387656679,
+        119.3664387656679,
+        119.3664387656679
+    ],
+    "mean_std_pixel_value_per_channel": [
+        43.593822886878776,
+        43.593822886878776,
+        43.593822886878776
+    ],
+    "is_uniform_across_examples": false,
+    "is_square": false,
+    "max_x_dim": 144,
+    "max_y_dim": 72,
+    "max_dim": 144,
+    "min_x_dim": 144,
+    "min_y_dim": 72,
+    "min_dim": 72,
+    "mean_x_dim": 144.0,
+    "mean_y_dim": 72.0,
+    "mean_dim": 108.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 36.0,
+    "max_examples_per_class": 19600,
+    "min_examples_per_class": 14400,
+    "mean_examples_per_class": 16333.333333333334,
+    "std_examples_per_class": 2322.833518691246,
+    "examples_per_class": [
+        19600,
+        14400,
+        15000
+    ]
+}

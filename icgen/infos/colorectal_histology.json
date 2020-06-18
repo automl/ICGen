@@ -1,0 +1,50 @@
+{
+    "name": "colorectal_histology",
+    "full_name": "colorectal_histology/2.0.0",
+    "size_mb": 246,
+    "num_examples": 5000,
+    "num_classes": 8,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 145.06356315259274,
+    "mean_std_pixel_value": 41.887377769577604,
+    "mean_pixel_value_per_channel": [
+        165.7241978933333,
+        120.44488958222189,
+        149.0216019822223
+    ],
+    "mean_std_pixel_value_per_channel": [
+        36.25957691541791,
+        37.39491862229696,
+        32.68736432336292
+    ],
+    "is_uniform_across_examples": true,
+    "is_square": true,
+    "max_x_dim": 150,
+    "max_y_dim": 150,
+    "max_dim": 150,
+    "min_x_dim": 150,
+    "min_y_dim": 150,
+    "min_dim": 150,
+    "mean_x_dim": 150.0,
+    "mean_y_dim": 150.0,
+    "mean_dim": 150.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 625,
+    "min_examples_per_class": 625,
+    "mean_examples_per_class": 625.0,
+    "std_examples_per_class": 0.0,
+    "examples_per_class": [
+        625,
+        625,
+        625,
+        625,
+        625,
+        625,
+        625,
+        625
+    ]
+}

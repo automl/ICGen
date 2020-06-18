@@ -1,0 +1,44 @@
+{
+    "name": "cycle_gan/horse2zebra",
+    "full_name": "cycle_gan/horse2zebra/2.0.0",
+    "size_mb": 111,
+    "num_examples": 2661,
+    "num_classes": 2,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 119.72888684765543,
+    "mean_std_pixel_value": 58.20731976190866,
+    "mean_pixel_value_per_channel": [
+        127.00190985449181,
+        125.10124165256505,
+        107.08350903590969
+    ],
+    "mean_std_pixel_value_per_channel": [
+        56.18469174660363,
+        55.514441018356415,
+        56.45160517778094
+    ],
+    "is_uniform_across_examples": false,
+    "is_square": true,
+    "max_x_dim": 256,
+    "max_y_dim": 256,
+    "max_dim": 256,
+    "min_x_dim": 256,
+    "min_y_dim": 256,
+    "min_dim": 256,
+    "mean_x_dim": 256.0,
+    "mean_y_dim": 256.0,
+    "mean_dim": 256.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 1474,
+    "min_examples_per_class": 1187,
+    "mean_examples_per_class": 1330.5,
+    "std_examples_per_class": 143.5,
+    "examples_per_class": [
+        1187,
+        1474
+    ]
+}

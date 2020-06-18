@@ -1,0 +1,48 @@
+{
+    "name": "fashion_mnist",
+    "full_name": "fashion_mnist/3.0.0",
+    "size_mb": 29,
+    "num_examples": 70000,
+    "num_classes": 10,
+    "num_channels": 1,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 72.96981142492736,
+    "mean_std_pixel_value": 81.6494808905131,
+    "mean_pixel_value_per_channel": [
+        72.9698114249271
+    ],
+    "mean_std_pixel_value_per_channel": [
+        81.6494808905135
+    ],
+    "is_uniform_across_examples": true,
+    "is_square": true,
+    "max_x_dim": 28,
+    "max_y_dim": 28,
+    "max_dim": 28,
+    "min_x_dim": 28,
+    "min_y_dim": 28,
+    "min_dim": 28,
+    "mean_x_dim": 28.0,
+    "mean_y_dim": 28.0,
+    "mean_dim": 28.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 7000,
+    "min_examples_per_class": 7000,
+    "mean_examples_per_class": 7000.0,
+    "std_examples_per_class": 0.0,
+    "examples_per_class": [
+        7000,
+        7000,
+        7000,
+        7000,
+        7000,
+        7000,
+        7000,
+        7000,
+        7000,
+        7000
+    ]
+}

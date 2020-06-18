@@ -1,0 +1,44 @@
+{
+    "name": "cycle_gan/facades",
+    "full_name": "cycle_gan/facades/2.0.0",
+    "size_mb": 33,
+    "num_examples": 1012,
+    "num_classes": 2,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 110.21632678266869,
+    "mean_std_pixel_value": 79.29367573367838,
+    "mean_pixel_value_per_channel": [
+        88.39201300700192,
+        95.75518985793525,
+        146.5017774830694
+    ],
+    "mean_std_pixel_value_per_channel": [
+        70.55400995702975,
+        62.44120209364735,
+        68.96437605562761
+    ],
+    "is_uniform_across_examples": false,
+    "is_square": true,
+    "max_x_dim": 256,
+    "max_y_dim": 256,
+    "max_dim": 256,
+    "min_x_dim": 256,
+    "min_y_dim": 256,
+    "min_dim": 256,
+    "mean_x_dim": 256.0,
+    "mean_y_dim": 256.0,
+    "mean_dim": 256.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 506,
+    "min_examples_per_class": 506,
+    "mean_examples_per_class": 506.0,
+    "std_examples_per_class": 0.0,
+    "examples_per_class": [
+        506,
+        506
+    ]
+}

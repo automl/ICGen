@@ -1,0 +1,44 @@
+{
+    "name": "horses_or_humans",
+    "full_name": "horses_or_humans/3.0.0",
+    "size_mb": 153,
+    "num_examples": 1283,
+    "num_classes": 2,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 150.1757245200771,
+    "mean_std_pixel_value": 59.372147191059106,
+    "mean_pixel_value_per_channel": [
+        156.666088196068,
+        148.95647054646207,
+        144.90461481770157
+    ],
+    "mean_std_pixel_value_per_channel": [
+        60.57310381357832,
+        57.00517210718128,
+        58.18175945021687
+    ],
+    "is_uniform_across_examples": true,
+    "is_square": true,
+    "max_x_dim": 300,
+    "max_y_dim": 300,
+    "max_dim": 300,
+    "min_x_dim": 300,
+    "min_y_dim": 300,
+    "min_dim": 300,
+    "mean_x_dim": 300.0,
+    "mean_y_dim": 300.0,
+    "mean_dim": 300.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 655,
+    "min_examples_per_class": 628,
+    "mean_examples_per_class": 641.5,
+    "std_examples_per_class": 13.5,
+    "examples_per_class": [
+        628,
+        655
+    ]
+}

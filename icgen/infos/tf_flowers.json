@@ -1,0 +1,47 @@
+{
+    "name": "tf_flowers",
+    "full_name": "tf_flowers/3.0.0",
+    "size_mb": 218,
+    "num_examples": 3670,
+    "num_classes": 5,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 100.88004253078361,
+    "mean_std_pixel_value": 67.18539098058747,
+    "mean_pixel_value_per_channel": [
+        117.88672855771665,
+        108.40901220161585,
+        76.34438683301802
+    ],
+    "mean_std_pixel_value_per_channel": [
+        64.49949041435572,
+        57.86878940615689,
+        58.98353547240478
+    ],
+    "is_uniform_across_examples": false,
+    "is_square": false,
+    "max_x_dim": 442,
+    "max_y_dim": 1024,
+    "max_dim": 1024,
+    "min_x_dim": 159,
+    "min_y_dim": 143,
+    "min_dim": 143,
+    "mean_x_dim": 271.79128065395093,
+    "mean_y_dim": 365.0623978201635,
+    "mean_dim": 318.4268392370572,
+    "std_x_dim": 51.73694235869525,
+    "std_y_dim": 116.8737886890548,
+    "std_dim": 101.70040397136451,
+    "max_examples_per_class": 898,
+    "min_examples_per_class": 633,
+    "mean_examples_per_class": 734.0,
+    "std_examples_per_class": 101.18893220110587,
+    "examples_per_class": [
+        898,
+        633,
+        799,
+        699,
+        641
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "name": "cycle_gan/apple2orange",
+    "full_name": "cycle_gan/apple2orange/2.0.0",
+    "size_mb": 74,
+    "num_examples": 2528,
+    "num_classes": 2,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 119.35035334558953,
+    "mean_std_pixel_value": 72.80775935917299,
+    "mean_pixel_value_per_channel": [
+        158.21963842609262,
+        115.7381346618073,
+        84.09328694886798
+    ],
+    "mean_std_pixel_value_per_channel": [
+        57.0457508776499,
+        62.050716091165896,
+        62.2582497456428
+    ],
+    "is_uniform_across_examples": false,
+    "is_square": true,
+    "max_x_dim": 256,
+    "max_y_dim": 256,
+    "max_dim": 256,
+    "min_x_dim": 256,
+    "min_y_dim": 256,
+    "min_dim": 256,
+    "mean_x_dim": 256.0,
+    "mean_y_dim": 256.0,
+    "mean_dim": 256.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 1267,
+    "min_examples_per_class": 1261,
+    "mean_examples_per_class": 1264.0,
+    "std_examples_per_class": 3.0,
+    "examples_per_class": [
+        1261,
+        1267
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "name": "cassava",
+    "full_name": "cassava/0.1.0",
+    "size_mb": 1291,
+    "num_examples": 9430,
+    "num_classes": 5,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 106.74724757596994,
+    "mean_std_pixel_value": 55.308621875444345,
+    "mean_pixel_value_per_channel": [
+        113.04074315298843,
+        126.47890326862496,
+        80.72209630629536
+    ],
+    "mean_std_pixel_value_per_channel": [
+        52.62803938700682,
+        52.80110569773304,
+        45.96694594379877
+    ],
+    "is_uniform_across_examples": false,
+    "is_square": false,
+    "max_x_dim": 1240,
+    "max_y_dim": 1622,
+    "max_dim": 1622,
+    "min_x_dim": 347,
+    "min_y_dim": 420,
+    "min_dim": 347,
+    "mean_x_dim": 572.0311770943796,
+    "mean_y_dim": 611.5765641569459,
+    "mean_dim": 591.8038706256627,
+    "std_x_dim": 109.27888808025389,
+    "std_y_dim": 140.01106766609888,
+    "std_dim": 127.13554433757238,
+    "max_examples_per_class": 4431,
+    "min_examples_per_class": 527,
+    "mean_examples_per_class": 1886.0,
+    "std_examples_per_class": 1426.926487244525,
+    "examples_per_class": [
+        777,
+        2406,
+        1289,
+        4431,
+        527
+    ]
+}

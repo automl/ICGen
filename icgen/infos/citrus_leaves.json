@@ -1,0 +1,46 @@
+{
+    "name": "citrus_leaves",
+    "full_name": "citrus_leaves/0.1.0",
+    "size_mb": 63,
+    "num_examples": 594,
+    "num_classes": 4,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 157.6465596756684,
+    "mean_std_pixel_value": 55.61620433720691,
+    "mean_pixel_value_per_channel": [
+        162.56489036380242,
+        157.63841882057062,
+        152.73636984263206
+    ],
+    "mean_std_pixel_value_per_channel": [
+        43.43669542199731,
+        43.957838641645935,
+        72.15306201316423
+    ],
+    "is_uniform_across_examples": false,
+    "is_square": true,
+    "max_x_dim": 256,
+    "max_y_dim": 256,
+    "max_dim": 256,
+    "min_x_dim": 256,
+    "min_y_dim": 256,
+    "min_dim": 256,
+    "mean_x_dim": 256.0,
+    "mean_y_dim": 256.0,
+    "mean_dim": 256.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 204,
+    "min_examples_per_class": 58,
+    "mean_examples_per_class": 148.5,
+    "std_examples_per_class": 54.545852271277234,
+    "examples_per_class": [
+        169,
+        163,
+        204,
+        58
+    ]
+}

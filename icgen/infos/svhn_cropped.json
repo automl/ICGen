@@ -1,0 +1,52 @@
+{
+    "name": "svhn_cropped",
+    "full_name": "svhn_cropped/3.0.0",
+    "size_mb": 1502,
+    "num_examples": 630420,
+    "num_classes": 10,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 111.3702215599822,
+    "mean_std_pixel_value": 33.48719020844063,
+    "mean_pixel_value_per_channel": [
+        110.10849535329622,
+        109.94623394051783,
+        114.05593538614386
+    ],
+    "mean_std_pixel_value_per_channel": [
+        31.902702395584676,
+        32.675579203964126,
+        29.240114496552742
+    ],
+    "is_uniform_across_examples": true,
+    "is_square": true,
+    "max_x_dim": 32,
+    "max_y_dim": 32,
+    "max_dim": 32,
+    "min_x_dim": 32,
+    "min_y_dim": 32,
+    "min_dim": 32,
+    "mean_x_dim": 32.0,
+    "mean_y_dim": 32.0,
+    "mean_dim": 32.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 109520,
+    "min_examples_per_class": 40710,
+    "mean_examples_per_class": 63042.0,
+    "std_examples_per_class": 20791.94664768068,
+    "examples_per_class": [
+        52242,
+        109520,
+        89474,
+        72144,
+        60614,
+        62756,
+        49286,
+        51611,
+        42063,
+        40710
+    ]
+}

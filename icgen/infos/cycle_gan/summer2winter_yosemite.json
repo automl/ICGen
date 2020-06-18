@@ -1,0 +1,44 @@
+{
+    "name": "cycle_gan/summer2winter_yosemite",
+    "full_name": "cycle_gan/summer2winter_yosemite/2.0.0",
+    "size_mb": 126,
+    "num_examples": 2740,
+    "num_classes": 2,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 104.00351655686273,
+    "mean_std_pixel_value": 62.80169976786692,
+    "mean_pixel_value_per_channel": [
+        98.90015265471744,
+        105.78446033784073,
+        107.32593667803019
+    ],
+    "mean_std_pixel_value_per_channel": [
+        59.33247296767722,
+        57.82038688446599,
+        66.1091557188802
+    ],
+    "is_uniform_across_examples": false,
+    "is_square": true,
+    "max_x_dim": 256,
+    "max_y_dim": 256,
+    "max_dim": 256,
+    "min_x_dim": 256,
+    "min_y_dim": 256,
+    "min_dim": 256,
+    "mean_x_dim": 256.0,
+    "mean_y_dim": 256.0,
+    "mean_dim": 256.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 1540,
+    "min_examples_per_class": 1200,
+    "mean_examples_per_class": 1370.0,
+    "std_examples_per_class": 170.0,
+    "examples_per_class": [
+        1540,
+        1200
+    ]
+}

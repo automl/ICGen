@@ -1,0 +1,52 @@
+{
+    "name": "imagenette",
+    "full_name": "imagenette/full-size/0.1.0",
+    "size_mb": 1484,
+    "num_examples": 13394,
+    "num_classes": 10,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 113.80335682711103,
+    "mean_std_pixel_value": 64.5712508727871,
+    "mean_pixel_value_per_channel": [
+        116.71744103114537,
+        116.53962842092892,
+        108.15300102925954
+    ],
+    "mean_std_pixel_value_per_channel": [
+        62.809512646375744,
+        61.183891150762705,
+        63.18490235185371
+    ],
+    "is_uniform_across_examples": false,
+    "is_square": false,
+    "max_x_dim": 4368,
+    "max_y_dim": 4288,
+    "max_dim": 4368,
+    "min_x_dim": 27,
+    "min_y_dim": 50,
+    "min_dim": 27,
+    "mean_x_dim": 407.5651784381066,
+    "mean_y_dim": 470.7892339853666,
+    "mean_dim": 439.1772062117366,
+    "std_x_dim": 200.31081783547302,
+    "std_y_dim": 227.3327847303491,
+    "std_dim": 216.5678408202529,
+    "max_examples_per_class": 1350,
+    "min_examples_per_class": 1244,
+    "mean_examples_per_class": 1339.4,
+    "std_examples_per_class": 31.8,
+    "examples_per_class": [
+        1350,
+        1350,
+        1350,
+        1244,
+        1350,
+        1350,
+        1350,
+        1350,
+        1350,
+        1350
+    ]
+}

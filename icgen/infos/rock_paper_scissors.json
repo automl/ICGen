@@ -1,0 +1,45 @@
+{
+    "name": "rock_paper_scissors",
+    "full_name": "rock_paper_scissors/3.0.0",
+    "size_mb": 219,
+    "num_examples": 2892,
+    "num_classes": 3,
+    "num_channels": 3,
+    "min_pixel_value": 3,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 212.57947672762728,
+    "mean_std_pixel_value": 64.58014332876004,
+    "mean_pixel_value_per_channel": [
+        218.6064234670351,
+        210.95210471799575,
+        208.17990199784853
+    ],
+    "mean_std_pixel_value_per_channel": [
+        54.40816365237407,
+        66.47858023590685,
+        70.84816229108377
+    ],
+    "is_uniform_across_examples": true,
+    "is_square": true,
+    "max_x_dim": 300,
+    "max_y_dim": 300,
+    "max_dim": 300,
+    "min_x_dim": 300,
+    "min_y_dim": 300,
+    "min_dim": 300,
+    "mean_x_dim": 300.0,
+    "mean_y_dim": 300.0,
+    "mean_dim": 300.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 964,
+    "min_examples_per_class": 964,
+    "mean_examples_per_class": 964.0,
+    "std_examples_per_class": 0.0,
+    "examples_per_class": [
+        964,
+        964,
+        964
+    ]
+}

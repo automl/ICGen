@@ -1,0 +1,52 @@
+{
+    "name": "cifar10",
+    "full_name": "cifar10/3.0.0",
+    "size_mb": 162,
+    "num_examples": 60000,
+    "num_classes": 10,
+    "num_channels": 3,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 120.84449672851453,
+    "mean_std_pixel_value": 53.81562641789273,
+    "mean_pixel_value_per_channel": [
+        125.42653860677083,
+        123.07674581705729,
+        114.03020576171875
+    ],
+    "mean_std_pixel_value_per_channel": [
+        51.548479582706356,
+        50.81291768487059,
+        51.22735917205358
+    ],
+    "is_uniform_across_examples": true,
+    "is_square": true,
+    "max_x_dim": 32,
+    "max_y_dim": 32,
+    "max_dim": 32,
+    "min_x_dim": 32,
+    "min_y_dim": 32,
+    "min_dim": 32,
+    "mean_x_dim": 32.0,
+    "mean_y_dim": 32.0,
+    "mean_dim": 32.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 6000,
+    "min_examples_per_class": 6000,
+    "mean_examples_per_class": 6000.0,
+    "std_examples_per_class": 0.0,
+    "examples_per_class": [
+        6000,
+        6000,
+        6000,
+        6000,
+        6000,
+        6000,
+        6000,
+        6000,
+        6000,
+        6000
+    ]
+}

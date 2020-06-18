@@ -1,0 +1,48 @@
+{
+    "name": "kmnist",
+    "full_name": "kmnist/3.0.0",
+    "size_mb": 20,
+    "num_examples": 70000,
+    "num_classes": 10,
+    "num_channels": 1,
+    "min_pixel_value": 0,
+    "max_pixel_value": 255,
+    "mean_pixel_value": 48.63687527332368,
+    "mean_std_pixel_value": 86.01234571792135,
+    "mean_pixel_value_per_channel": [
+        48.63687527332362
+    ],
+    "mean_std_pixel_value_per_channel": [
+        86.01234571792142
+    ],
+    "is_uniform_across_examples": true,
+    "is_square": true,
+    "max_x_dim": 28,
+    "max_y_dim": 28,
+    "max_dim": 28,
+    "min_x_dim": 28,
+    "min_y_dim": 28,
+    "min_dim": 28,
+    "mean_x_dim": 28.0,
+    "mean_y_dim": 28.0,
+    "mean_dim": 28.0,
+    "std_x_dim": 0.0,
+    "std_y_dim": 0.0,
+    "std_dim": 0.0,
+    "max_examples_per_class": 7000,
+    "min_examples_per_class": 7000,
+    "mean_examples_per_class": 7000.0,
+    "std_examples_per_class": 0.0,
+    "examples_per_class": [
+        7000,
+        7000,
+        7000,
+        7000,
+        7000,
+        7000,
+        7000,
+        7000,
+        7000,
+        7000
+    ]
+}
