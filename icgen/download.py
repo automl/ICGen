@@ -6,12 +6,15 @@ import tensorflow_datasets as tfds
 
 import icgen
 
+import logging
+
+logger = logging.getLogger("icgen.download")
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument("--data_path", required=True)
 parser.add_argument("--datasets", nargs="+")
-parser.add_argument("--dataset_group", default="all", choices=["all, train, val, test"])
+parser.add_argument("--dataset_group", default="all", choices=["all", "train", "val", "test"])
 args = parser.parse_args()
 
 if args.datasets is None:
@@ -43,4 +46,18 @@ def _download(dataset, data_dir):
 
 for i, dataset in enumerate(datasets, 1):
     print(f"Downloading {dataset} ({i}/{len(datasets)})")
-    _download(dataset, args.data_path)
+    print(45 * "=")
+    print()
+    try:
+        _download(dataset, args.data_path)
+    except tfds.download.download_manager.NonMatchingChecksumError:
+        logger.exception(
+            "Checksum did not match, idealy we would restart the download for you, but as"
+            f" of now you need to remove all already downloaded files for {dataset} and"
+            " restart the download for this dataset"
+        )
+    except Exception:
+        logger.exception(
+            f"Exception occured during the download of {dataset}, please try to download"
+            " it again or open an issue."
+        )

@@ -4,7 +4,6 @@ TRAIN_DATASETS = [
     "caltech_birds2010",
     "caltech_birds2011",
     "cars196",
-    "cifar10_1",
     "citrus_leaves",
     "cmaterdb/bangla",
     "cmaterdb/devanagari",
@@ -61,6 +60,7 @@ _ERROR = [
     "so2sat/all",  # High channels, ValueError: as_supervised=True but so2sat does not support a supervised (input, label) structure.
     "cycle_gan/cityscapes",  # NonMatchingChecksumError
     "plantae_k",  # tensorflow.python.framework.errors_impl.ResourceExhaustedError: + noisy
+    "cifar10_1",  # Checksum makes problems
 ]
 
 _LARGER_THAN_4GB = [
