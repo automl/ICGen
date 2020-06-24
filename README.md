@@ -2,12 +2,11 @@
 
 ## Installation
 
-### The Package
+```
+pip install icgen
+```
 
-```
-git clone https://github.com/automl/ICGen.git
-pip install ICGen/
-```
+for a development installation see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ### Downloading the Datasets
 
