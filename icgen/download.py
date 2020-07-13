@@ -1,4 +1,5 @@
 import argparse
+import logging
 
 from pathlib import Path
 
@@ -6,7 +7,6 @@ import tensorflow_datasets as tfds
 
 import icgen
 
-import logging
 
 logger = logging.getLogger("icgen.download")
 
@@ -59,13 +59,14 @@ def download_datasets(data_dir, datasets=None, dataset_group=None):
             )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--data_path", required=True)
     parser.add_argument("--datasets", nargs="+")
-    parser.add_argument("--dataset_group", default=None,
-                        choices=["all", "train", "val", "test"])
+    parser.add_argument(
+        "--dataset_group", default=None, choices=["all", "train", "val", "test"]
+    )
     args = parser.parse_args()
 
     download_datasets(args.data_path, args.datasets, args.dataset_group)
