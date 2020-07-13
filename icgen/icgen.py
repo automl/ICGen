@@ -190,7 +190,16 @@ def _load_dataset_info(dataset_key, info_path):
     return info
 
 
-def _load_dataset(dataset_key, data_path, info_path):
+def _load_dataset(dataset_key, data_path, info_path, download=False):
+    download_config = tfds.download.DownloadConfig(
+        extract_dir=data_path / "_extract",
+        download_mode=tfds.download.GenerateMode.REUSE_DATASET_IF_EXISTS,
+    )
+    download_dir = data_path / "_download"
+    download_and_prepare_kwargs = dict(
+        download_config=download_config, download_dir=download_dir
+    )
+
     dataset = tfds.load(
         dataset_key,
         split=None,  # return as dict: split_name -> valid_ratio
@@ -198,8 +207,9 @@ def _load_dataset(dataset_key, data_path, info_path):
         batch_size=None,  # return full datasets as tensors
         in_memory=False,
         shuffle_files=False,
-        download=False,
+        download=download,
         as_supervised=True,
+        download_and_prepare_kwargs=download_and_prepare_kwargs,
     )
     splits = []
     for _, split in tfds.as_numpy(dataset).items():  # dict: split_name -> valid_ratio
@@ -220,7 +230,7 @@ class ICDatasetGenerator:
         min_examples_per_class=20,
         max_examples_per_class=100_000,
     ):
-        self._data_path = data_path
+        self._data_path = Path(data_path)
         self._info_path = Path(__file__).parent / "infos"
 
         self.min_resolution = min_resolution
@@ -248,7 +258,7 @@ class ICDatasetGenerator:
             f"max_examples_per_class={self.max_examples_per_class})"
         )
 
-    def identifier_to_dataset(self, identifier):
+    def identifier_to_dataset(self, identifier, download=False):
         # Identifier includes:
         # - dataset
         # - classes
@@ -256,7 +266,7 @@ class ICDatasetGenerator:
         # - class_to_test_samples
         logger.info("Constructing data from identifier")
         dataset, dataset_info = _load_dataset(
-            identifier["dataset"], self._data_path, self._info_path
+            identifier["dataset"], self._data_path, self._info_path, download
         )
         dev_data, test_data = _identifier_to_data(identifier, dataset)
         return dev_data, test_data, dataset_info
@@ -279,8 +289,8 @@ class ICDatasetGenerator:
         else:
             return _dataset_to_identifier(dataset, dataset_info)
 
-    def get_dataset(self, dataset=None, datasets=None, augment=False):
+    def get_dataset(self, dataset=None, datasets=None, augment=False, download=False):
         identifier = self.get_identifier(
             dataset=dataset, datasets=datasets, augment=augment
         )
-        return self.identifier_to_dataset(identifier)
+        return self.identifier_to_dataset(identifier, download=download)
