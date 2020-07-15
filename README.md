@@ -32,16 +32,15 @@ The `augment` parameter controls whether the original dataset is modified.
 
 Options only affect sampling with `augment=True` and the min max ranges do not filter datasets.
 
-The data is left at the original resolution, so it can be resized once by the user.
+The data is left at the original resolution, so it can be resized under user control.
+This is necessary to for example avoid resizing twice which can hurt performance.
 
 You can also sample from a list of datasets
-
 ```python
-task = dataset_generator.get_dataset(datasets=["cifar100", "emnist/balanced"], augment=True, download=True)
+dev_data, test_data, dataset_info = dataset_generator.get_dataset(datasets=["cifar100", "emnist/balanced"], download=True)
 ```
 
 We provide some lists of available datasets
-
 ```python
 import icgen
 icgen.DATASETS_TRAIN
@@ -49,9 +48,7 @@ icgen.DATASETS_VAL
 icgen.DATASETS_TEST
 icgen.DATASETS
 ```
-
-or on the commandline you can run
-
+or on the commandline you can get the names with
 ```
 python -m icgen.dataset_names
 ```
