@@ -4,7 +4,7 @@ build-backend = "poetry.masonry.api"
 
 [tool.poetry]
 name = "icgen"
-version = "0.2.1"
+version = "0.3.0"
 description = " Image Classification Dataset Generator"
 authors = ["Danny Stoll"]
 readme = "README.md"
