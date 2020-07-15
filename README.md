@@ -25,7 +25,9 @@ dataset_generator = icgen.ICDatasetGenerator(
   min_examples_per_class=20,
   max_examples_per_class=100_000,
 )
-dev_data, test_data, dataset_info = dataset_generator.get_dataset(dataset="cifar10", augment=True, download=True)
+dev_data, test_data, dataset_info = dataset_generator.get_dataset(
+    dataset="cifar10", augment=True, download=True
+)
 ```
 
 The `augment` parameter controls whether the original dataset is modified.
@@ -37,7 +39,7 @@ This is necessary to for example avoid resizing twice which can hurt performance
 
 You can also sample from a list of datasets
 ```python
-dev_data, test_data, dataset_info = dataset_generator.get_dataset(datasets=["cifar100", "emnist/balanced"], download=True)
+dataset_generator.get_dataset(datasets=["cifar100", "emnist/balanced"], download=True)
 ```
 
 We provide some lists of available datasets
