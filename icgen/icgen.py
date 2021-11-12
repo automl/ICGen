@@ -294,3 +294,42 @@ class ICDatasetGenerator:
             dataset=dataset, datasets=datasets, augment=augment
         )
         return self.identifier_to_dataset(identifier, download=download)
+
+
+def save_dataset(data: dict, info: dict, save_path: Path,
+                 chunk_size: Optional[int] = None):
+    """
+    Save a dataset in a torchvision-compatible format. Still quite rudimentary, intended
+    for use with raw datasets only and not augmented versions.
+
+    :param data: dict of lists of 2-tuples
+        The raw data to be chunked and saved. A single data split (training, validation,
+        testing...) is a a list of 2-tuples containing a numpy-array and a class label.
+        A dict of such lists can be given mapping the name of each split (key of dict)
+        to the data (corresponding value of dict) within that split.
+    :param info: dict
+        The dataset's info dict
+    :param save_path: Path-like
+        Path to the directory where the dataset is to be saved. It is recommended that
+        this be different from the directory where the original dataset and splits were
+        downloaded and saved by ICGen.
+    :param chunk_size: None or int
+        Size in MB of each chunk. When None (default), all data is saved into a single
+        file. This eases up memory usage during both saving and loading. # TODO: Implement
+    :return: None
+    """
+    assert isinstance(data, dict), \
+        f"The data to be saved must be given as an appropriately formatted dict, was " \
+        f"{type(data)}"
+    outdir = save_path / f"{info['name']}"
+    outdir.mkdir(exist_ok=True)
+    torch_info = {"splits": []}
+    for k, v in data.items():
+        images, labels = more_itertools.unzip(v)
+        with open(outdir / f"{k}-split", "wb") as fp:
+            pickle.dump({"images": list(images), "labels": list(labels)}, fp)
+        torch_info["splits"].append(k)
+    info["torch_info"] = torch_info
+    with open(outdir / INFO_FILENAME, "w") as fp:
+        json.dump(info, fp)
+
