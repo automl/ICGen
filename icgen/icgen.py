@@ -5,6 +5,8 @@ import random
 from typing import Optional
 from collections import defaultdict
 from pathlib import Path
+import more_itertools
+import pickle
 
 import tensorflow_datasets as tfds
 
@@ -144,7 +146,7 @@ def _dataset_to_identifier(dataset, dataset_info, test_ratio: float = 0.1):
 
     test_per_class = min(class_examples for class_examples in examples_per_class) // 2
     test_per_class = min(test_per_class,
-                         math.floor(total_examples // num_classes * test_ratio))
+                         math.floor((total_examples // num_classes) * test_ratio))
     identifier["class_to_test_samples"] = {
         class_: set(range(test_per_class)) for class_ in range(num_classes)
     }
@@ -305,7 +307,7 @@ def _get_valid_split(dev_split: list, info: dict, valid_fraction: float = 0.0) -
     well as an info dict pertains to the input dev_split only, i.e. contains statistical
     info about the dev_split. """
 
-    new_info = copy(info)
+    new_info = dict(info)
     new_info["num_examples"] = len(dev_split)
 
     ## Calculate new examples per class
@@ -316,7 +318,7 @@ def _get_valid_split(dev_split: list, info: dict, valid_fraction: float = 0.0) -
     new_info["examples_per_class"] = \
         [class_to_count[class_] for class_ in sorted(class_to_count.keys())]
     valid_split_identifier = _dataset_to_identifier(
-        dataset=new_info["dataset"], dataset_info=new_info, test_ratio=valid_fraction
+        dataset=new_info["name"], dataset_info=new_info, test_ratio=valid_fraction
     )
 
     # Generate only the indices for the training/validation splits
@@ -324,7 +326,7 @@ def _get_valid_split(dev_split: list, info: dict, valid_fraction: float = 0.0) -
     class_to_count = defaultdict(int)
 
     # TODO: Can this be integrated with the loop above?
-    for idx, (image, label) in enumerate(dataset):
+    for idx, (image, label) in enumerate(dev_split):
         class_ = int(label)
         image_id = class_to_count[class_]
         class_to_count[class_] += 1
@@ -397,6 +399,6 @@ def save_dataset(dev_split: list, test_split: list, info: dict, save_path: Path,
             json.dump(validation_split_dict, fp)
 
     info["torch_info"] = torch_info
-    with open(outdir / INFO_FILENAME, "w") as fp:
+    with open(outdir / "info.json", "w") as fp:
         json.dump(info, fp)
 
