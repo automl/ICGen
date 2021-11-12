@@ -2,7 +2,7 @@ import json
 import logging
 import math
 import random
-
+from typing import Optional
 from collections import defaultdict
 from pathlib import Path
 
@@ -130,7 +130,7 @@ def _dataset_to_augmented_identifier(
     return identifier
 
 
-def _dataset_to_identifier(dataset, dataset_info):
+def _dataset_to_identifier(dataset, dataset_info, test_ratio: float = 0.1):
     identifier = dict()
 
     identifier["dataset"] = dataset
@@ -143,7 +143,8 @@ def _dataset_to_identifier(dataset, dataset_info):
     total_examples = dataset_info["num_examples"]
 
     test_per_class = min(class_examples for class_examples in examples_per_class) // 2
-    test_per_class = min(test_per_class, total_examples // (num_classes * 10))
+    test_per_class = min(test_per_class,
+                         math.floor(total_examples // num_classes * test_ratio))
     identifier["class_to_test_samples"] = {
         class_: set(range(test_per_class)) for class_ in range(num_classes)
     }
@@ -296,39 +297,105 @@ class ICDatasetGenerator:
         return self.identifier_to_dataset(identifier, download=download)
 
 
-def save_dataset(data: dict, info: dict, save_path: Path,
-                 chunk_size: Optional[int] = None):
+def _get_valid_split(dev_split: list, info: dict, valid_fraction: float = 0.0) -> dict:
+    """ Given an info dict for any dataset and its dev_split, performs the same splitting
+    operation as for splitting the whole dataset into a dev/test split but it treats the
+    given dev_split as the whole dataset. Useful for further splitting the dev_split into
+    a training and a validation split. Returns the new training and validation splits as
+    well as an info dict pertains to the input dev_split only, i.e. contains statistical
+    info about the dev_split. """
+
+    new_info = copy(info)
+    new_info["num_examples"] = len(dev_split)
+
+    ## Calculate new examples per class
+    class_to_count = defaultdict(int)
+    for image, label in dev_split:
+        class_ = int(label)
+        class_to_count[class_] += 1
+    new_info["examples_per_class"] = \
+        [class_to_count[class_] for class_ in sorted(class_to_count.keys())]
+    valid_split_identifier = _dataset_to_identifier(
+        dataset=new_info["dataset"], dataset_info=new_info, test_ratio=valid_fraction
+    )
+
+    # Generate only the indices for the training/validation splits
+    train_split, valid_split = [], []
+    class_to_count = defaultdict(int)
+
+    # TODO: Can this be integrated with the loop above?
+    for idx, (image, label) in enumerate(dataset):
+        class_ = int(label)
+        image_id = class_to_count[class_]
+        class_to_count[class_] += 1
+
+        is_train_image = image_id in valid_split_identifier["class_to_dev_samples"][class_]
+        is_test_image = image_id in valid_split_identifier["class_to_test_samples"][class_]
+        if is_train_image:
+            train_split.append(idx)
+        elif is_test_image:
+            valid_split.append(idx)
+
+        # TODO: Include pixel statistic calculation here
+
+    # train_split, valid_split = _identifier_to_data(valid_split_identifier, dev_split)
+    return train_split, valid_split, new_info
+
+
+def save_dataset(dev_split: list, test_split: list, info: dict, save_path: Path,
+                 valid_fraction: float = 0.0, chunk_size: Optional[int] = None):
     """
     Save a dataset in a torchvision-compatible format. Still quite rudimentary, intended
     for use with raw datasets only and not augmented versions.
 
-    :param data: dict of lists of 2-tuples
-        The raw data to be chunked and saved. A single data split (training, validation,
-        testing...) is a a list of 2-tuples containing a numpy-array and a class label.
-        A dict of such lists can be given mapping the name of each split (key of dict)
-        to the data (corresponding value of dict) within that split.
+    :param dev_split: list of 2-tuples
+        The raw data to be chunked and saved. A list of 2-tuples containing a numpy-array
+        and a class label. This can be further split into a training and a validation
+        split, see 'valid_fraction'.
+    :param test_split: list of 2-tuples
+        The raw data to be chunked and saved. A list of 2-tuples containing a numpy-array
+        and a class label.
     :param info: dict
         The dataset's info dict
     :param save_path: Path-like
         Path to the directory where the dataset is to be saved. It is recommended that
         this be different from the directory where the original dataset and splits were
         downloaded and saved by ICGen.
+    :param valid_fraction: float
+        Fraction of the training split to be further split off into a validation set. If
+        0.0 (default), no validation split is generated.
     :param chunk_size: None or int
         Size in MB of each chunk. When None (default), all data is saved into a single
         file. This eases up memory usage during both saving and loading. # TODO: Implement
     :return: None
     """
-    assert isinstance(data, dict), \
-        f"The data to be saved must be given as an appropriately formatted dict, was " \
-        f"{type(data)}"
+
     outdir = save_path / f"{info['name']}"
     outdir.mkdir(exist_ok=True)
     torch_info = {"splits": []}
-    for k, v in data.items():
+
+    splits = {"train": dev_split, "test": test_split}
+    dev_info = None
+
+    if valid_fraction > 0.0:
+        train_split, valid_split, dev_info = \
+            _get_valid_split(dev_split, info, valid_fraction)
+        validation_split_dict = {
+            "train": ['int', train_split],
+            "valid": ['int', valid_split]
+        }
+
+    for k, v in splits.items():
         images, labels = more_itertools.unzip(v)
         with open(outdir / f"{k}-split", "wb") as fp:
             pickle.dump({"images": list(images), "labels": list(labels)}, fp)
         torch_info["splits"].append(k)
+
+    if dev_info is not None:
+        torch_info["dev_info"] = dev_info
+        with open(outdir / f"{info['name']}-validation-split.json", "w") as fp:
+            json.dump(validation_split_dict, fp)
+
     info["torch_info"] = torch_info
     with open(outdir / INFO_FILENAME, "w") as fp:
         json.dump(info, fp)
