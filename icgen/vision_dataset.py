@@ -31,7 +31,7 @@ class ICVisionDataset(VisionDataset):
         # Only applicable for datasets with square images
         self.images = np.stack(images).reshape((-1, meta["num_channels"], meta["max_dim"],
                                                 meta["max_dim"]))
-        self.images = self.images.transpose((0, 2, 3, 1))  # convert to HWC
+        # self.images = self.images.transpose((0, 2, 3, 1))  # convert to HWC
         self.labels = data["labels"]
         self.meta = meta
 

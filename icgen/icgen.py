@@ -374,13 +374,14 @@ def save_dataset(dev_split: list, test_split: list, info: dict, save_path: Path,
 
     outdir = save_path / f"{info['name']}"
     outdir.mkdir(exist_ok=True)
-    torch_info = {"splits": []}
+    new_info = dict(info)
+    new_info["splits"] = []
 
     splits = {"train": dev_split, "test": test_split}
-    dev_info = None
+    train_info = None
 
     if valid_fraction > 0.0:
-        train_split, valid_split, dev_info = \
+        train_split, valid_split, train_info = \
             _get_valid_split(dev_split, info, valid_fraction)
         validation_split_dict = {
             "train": ['int', train_split],
@@ -393,12 +394,11 @@ def save_dataset(dev_split: list, test_split: list, info: dict, save_path: Path,
             pickle.dump({"images": list(images), "labels": list(labels)}, fp)
         torch_info["splits"].append(k)
 
-    if dev_info is not None:
-        torch_info["dev_info"] = dev_info
+    if train_info is not None:
+        new_info["train_info"] = train_info
         with open(outdir / f"{info['name']}-validation-split.json", "w") as fp:
             json.dump(validation_split_dict, fp)
 
-    info["torch_info"] = torch_info
     with open(outdir / "info.json", "w") as fp:
-        json.dump(info, fp)
+        json.dump(new_info, fp)
 
