@@ -20,7 +20,7 @@ class ICVisionDataset(VisionDataset):
         datadir = root / dataset
         with open(datadir / "info.json") as fp:
             meta = json.load(fp)
-        splits = meta["torch_info"]["splits"]
+        splits = meta["splits"]
         assert split in splits, f"Unknown data split: {split}, must be one of {splits}."
 
         datafile = datadir / f"{split}-split"
@@ -29,8 +29,8 @@ class ICVisionDataset(VisionDataset):
 
         images = data["images"]
         # Only applicable for datasets with square images
-        self.images = np.stack(images).reshape((-1, meta["num_channels"], meta["max_dim"],
-                                                meta["max_dim"]))
+        self.images = np.stack(images).reshape((-1, meta["max_dim"], meta["max_dim"],
+                                                meta["num_channels"]))
         # self.images = self.images.transpose((0, 2, 3, 1))  # convert to HWC
         self.labels = data["labels"]
         self.meta = meta
@@ -38,7 +38,7 @@ class ICVisionDataset(VisionDataset):
     def __getitem__(self, index) -> Tuple[Any, Any]:
         # To stick with the convention of other torchvision datasets, this will return
         # PIL Images.
-        img, label = self.images[index], self.images[index]
+        img, label = self.images[index], self.labels[index]
 
         img = Image.fromarray(img)
 

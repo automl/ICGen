@@ -312,9 +312,11 @@ def _get_valid_split(dev_split: list, info: dict, valid_fraction: float = 0.0) -
 
     ## Calculate new examples per class
     class_to_count = defaultdict(int)
+
     for image, label in dev_split:
         class_ = int(label)
         class_to_count[class_] += 1
+
     new_info["examples_per_class"] = \
         [class_to_count[class_] for class_ in sorted(class_to_count.keys())]
     valid_split_identifier = _dataset_to_identifier(
@@ -392,7 +394,7 @@ def save_dataset(dev_split: list, test_split: list, info: dict, save_path: Path,
         images, labels = more_itertools.unzip(v)
         with open(outdir / f"{k}-split", "wb") as fp:
             pickle.dump({"images": list(images), "labels": list(labels)}, fp)
-        torch_info["splits"].append(k)
+        new_info["splits"].append(k)
 
     if train_info is not None:
         new_info["train_info"] = train_info
