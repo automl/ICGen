@@ -39,8 +39,9 @@ class ICVisionDataset(VisionDataset):
         # To stick with the convention of other torchvision datasets, this will return
         # PIL Images.
         img, label = self.images[index], self.labels[index]
+        img: np.ndarray
 
-        img = Image.fromarray(img)
+        img = Image.fromarray(img.squeeze())
 
         if self.transform is not None:
             img = self.transform(img)

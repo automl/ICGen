@@ -65,10 +65,10 @@ def _downsample_fn(split: list, num_channels: int, resolution: int) -> \
         sums += image_tensor.sum([0, 1])
         sums_sq += (image_tensor ** 2).sum([0, 1])
         nuneven = 0
-        min_pixel = min(min_pixel, img.min())
-        max_pixel = max(max_pixel, img.max())
+        min_pixel = min(min_pixel, image_tensor.min().tolist())
+        max_pixel = max(max_pixel, image_tensor.max().tolist())
 
-        img: Image = Image.fromarray(image)
+        img: Image = Image.fromarray(image.squeeze())
         resized_img: Image = resizer(img)
 
         # If either of the first two dimensions - H and W - are not exactly equal to the
@@ -118,7 +118,10 @@ def downsample_dataset(dev_split: list, test_split: list, info: dict,
     new_test_split, _, _, _, _, _, nuneven_test = _downsample_fn(
         test_split, nchannels, resolution)
 
-    new_info["is_square"] = nuneven_train == 0 or downsampling_force_resize
+    new_info["is_square"] = (nuneven_train == 0 and nuneven_test == 0) \
+                            or downsampling_force_resize
+    # new_info["is_uniform_across_examples"] = (nuneven_train == 0 and nuneven_test == 0) \
+    #                                          or downsampling_force_resize
     new_info["num_uneven_train"] = nuneven_train
     new_info["num_uneven_test"] = nuneven_test
 
@@ -137,7 +140,7 @@ def _pad_fn(split: list, padding: int) -> list:
     new_split = []
 
     for idx, (image, label) in enumerate(split):
-        img: Image = Image.fromarray(image)
+        img: Image = Image.fromarray(image.squeeze())
         padded_img: Image = transformer(img)
         img: np.ndarray = np.array(padded_img)
         new_split.append((img, label))
